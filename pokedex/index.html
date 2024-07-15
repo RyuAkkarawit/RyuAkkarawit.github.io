@@ -13,6 +13,10 @@
       .card {
         margin-bottom: 1rem;
       }
+
+      body {
+        background-color: rgb(91, 89, 89);
+      }            
     </style>
   </head>
   <body>
@@ -26,25 +30,27 @@
         .then((data) => {
           const datas = data["results"];
           const ele = document.getElementById("name");
-        let count = 1;
-          datas.forEach((element) => {
-            //https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
-            ele.innerHTML +=
-              "<div class='col-3'>" +
-              "<div class='card'>" +
-              "<img class='card-img-top' src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+count+".png'>" +
-              "<div class='card-body'>" +
-              element["name"] +
-              "</div></div></div>";
-              count++;
+        
+          datas.forEach((element, index) => {
+            const pokemonId = index + 1
+            const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
+            ele.innerHTML += `
+            <div class='col-3'>
+            <div class='card'>
+            <img class='card-img-top' src='${imgSrc}' alt='${element["name"]}'>
+            <div class='class-body ps-3'>
+            ${element["name"]}
+            </div></div></div>`
+              
           });
         })
         .catch((err) => console.error(err));
     </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <script>
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+    </script>
+    
   </body>
 </html>
