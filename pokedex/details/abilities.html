@@ -7,33 +7,57 @@
     <title>Pokemon by Type</title>
     <style>
         body {
-            background-color: #fffbea;
-            color: #333;
+            background-color: #121212;
+            color: #e0e0e0;
         }
         h1 {
-            color: #ffcc00;
             margin-bottom: 2rem;
+            text-align: center;
+            font-weight: bold;
+            text-transform: capitalize;
+            color: #ffcc00;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 2rem;
         }
         .card {
-            background-color: #fff8dc;
-            border: 3px solid #ffeb3b;
+            background-color: #1e1e1e;
+            border: 3px solid #333;
             margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .card .card-body {
-            background-color: #fff176;
-            color: #9f0000;
+            color: #e0e0e0;
         }
-        .card .card-img-top {
-            border-bottom: 1px solid #ffeb3b;
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            border-bottom: 1px solid #333;
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            color: #e0e0e0;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        a:hover {
+            color: #ffd740;
         }
         .btn-primary {
-            background-color: #ffeb3b;
-            border-color: #ffeb3b;
-            color: #333;
+            background-color: #ffcc00;
+            border-color: #ffcc00;
+            color: #121212;
         }
         .btn-primary:hover {
-            background-color: #ffe082;
-            border-color: #ffe082;
+            background-color: #ffd740;
+            border-color: #ffd740;
         }
     </style>
 </head>

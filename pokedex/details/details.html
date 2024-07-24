@@ -7,50 +7,63 @@
     <title>Pokemon Details</title>
     <style>
         body {
-            background-color: #fffbea;
+            background-color: #ffe9ab;
             color: #333;
         }
         h1 {
             margin-bottom: 2rem;
             text-align: center;
+            font-weight: bold;
+            text-transform: capitalize;
+            
         }
         .container {
-            max-width: 600px;
+            max-width: 500px;
+            margin-top: 2rem;
         }
         .card {
             margin-bottom: 1rem;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .card .card-body {
             color: #333;
+        }
+        .card img {
+            width: 50%;
+            border-radius: 8px;
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 id="pokemon-name"></h1>
-        <img id="pokemon-sprite" src="" alt="Pokemon Sprite" class="img-fluid"/>
-        <p><strong>Height:</strong> <span id="pokemon-height"></span></p>
-        <p><strong>Weight:</strong> <span id="pokemon-weight"></span></p>
-        <p><strong>Types:</strong> <span id="pokemon-types"></span></p>
-        <p><strong>Stats:</strong></p>
-        <ul id="pokemon-stats" class="list-group"></ul>
-        <p><strong>Abilities:</strong> <span id="pokemon-abilities"></span></p>
+        <div class="card">
+            <img id="pokemon-sprite" src="" alt="Pokemon Sprite" class="img-fluid"/>
+            <div class="card-body">
+                <p><strong>Height:</strong> <span id="pokemon-height"></span></p>
+                <p><strong>Weight:</strong> <span id="pokemon-weight"></span></p>
+                <p><strong>Types:</strong> <span id="pokemon-types"></span></p>
+                <p><strong>Stats:</strong></p>
+                <ul id="pokemon-stats" class="list-group"></ul>
+                <p><strong>Abilities:</strong> <span id="pokemon-abilities"></span></p>
+            </div>
+        </div>
     </div>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const pokemonName = urlParams.get('name');
 
         const typeColors = {
-            fire: '#FF5722',
-            water: '#2196F3',
-            grass: '#4CAF50',
-            electric: '#FFEB3B',
-            psychic: '#E91E63',
-            ice: '#00BCD4',
-            dragon: '#3F51B5',
-            dark: '#212121',
-            fairy: '#E1BEE7',
-            normal: '#9E9E9E'
+            
         };
 
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
@@ -69,7 +82,7 @@
 
             document.getElementById('pokemon-types').innerHTML = types;
 
-            const stats = pokemon.stats.map(stat => `<li class="list-group-item">${stat.stat.name}: ${stat.base_stat}</li>`).join('');
+            const stats = pokemon.stats.map(stat => `<li class="list-group-item">${stat.stat.name} <span>${stat.base_stat}</span></li>`).join('');
             document.getElementById('pokemon-stats').innerHTML = stats;
 
             const abilities = pokemon.abilities.map(abilityInfo => `<a href="../details/abilities.html?ability=${abilityInfo.ability.name}">${abilityInfo.ability.name}</a>`).join(', ');

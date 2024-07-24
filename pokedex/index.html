@@ -12,8 +12,9 @@
             <button id="load-more" class="btn btn-primary">Load More</button>
         </div>
     </div>
+    
     <script>
-        fetch("https://pokeapi.co/api/v2/pokemon")
+         fetch("https://pokeapi.co/api/v2/pokemon")
         .then(res => res.json())
         .then(data => {
             const datas = data.results;
