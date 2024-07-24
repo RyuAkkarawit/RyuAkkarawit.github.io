@@ -1,0 +1,44 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    font-family: 'Pokemon Solid', sans-serif;
+    color: #ffcb05;
+    text-shadow: 2px 2px #2a75bb;
+}
+
+.card {
+    border: 2px solid #ffcb05;
+    border-radius: 15px;
+}
+
+.card-img-top {
+    padding: 10px;
+}
+
+.card-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #2a75bb;
+}
+
+.btn-primary {
+    background-color: #2a75bb;
+    border-color: #2a75bb;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #ffcb05;
+    border-color: #ffcb05;
+    color: #2a75bb;
+}
+
+.card-body {
+    text-align: center;
+}
+.btn-card {
+    margin-top: 10px;
+}
