@@ -1,4 +1,4 @@
-const appKey= "822aa8da99d4dfbf95501c56def12fcf"
+const appKey= "b2fd5716577da1e10d2f50f146f3dba2"
 
 const searchButton = document.querySelector("#search-btn");
 const searchInput = document.querySelector("#search-txt");
